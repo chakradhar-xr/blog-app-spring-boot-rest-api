@@ -4,6 +4,7 @@ import com.springboot.blog.payload.PostDto;
 import com.springboot.blog.payload.PostResponse;
 
 import java.util.List;
+import java.util.Map;
 
 public interface PostService {
     PostDto createPost(PostDto postDto);
@@ -13,6 +14,8 @@ public interface PostService {
     PostDto getPostById(long id);
 
     PostDto updatePost(PostDto postDto, long id);
+
+    PostDto patchPost(long id, Map<String, Object> fields);
 
     void deletePostById(long id);
 

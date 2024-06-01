@@ -1,6 +1,7 @@
 package com.springboot.blog.payload;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import jakarta.validation.constraints.NotEmpty;
@@ -28,7 +29,9 @@ public class PostDto {
     )
     // post description should be not null or empty
     // post description should have at least 10 characters
+    //this needs to be pushed
     @NotEmpty
+    @NotBlank
     @Size(min = 10, message = "Post description should have at least 10 characters")
     private String description;
 

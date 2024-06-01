@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/posts")
@@ -99,6 +100,15 @@ public class PostController {
        PostDto postResponse = postService.updatePost(postDto, id);
 
        return new ResponseEntity<>(postResponse, HttpStatus.OK);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PatchMapping("/{id}")
+    public ResponseEntity<PostDto> patchPost(@Valid @RequestBody Map<String, Object> fields, @PathVariable(name = "id") long id){
+
+        PostDto postResponse = postService.patchPost(id, fields);
+
+        return new ResponseEntity<>(postResponse, HttpStatus.OK);
     }
 
     @Operation(
