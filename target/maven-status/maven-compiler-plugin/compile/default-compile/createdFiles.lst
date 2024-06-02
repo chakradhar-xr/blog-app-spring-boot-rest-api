@@ -4,6 +4,7 @@ com\springboot\blog\repository\CommentRepository.class
 com\springboot\blog\exception\GlobalExceptionHandler.class
 com\springboot\blog\controller\CategoryController.class
 com\springboot\blog\repository\RoleRepository.class
+com\springboot\blog\controller\HomeController.class
 com\springboot\blog\entity\Comment.class
 com\springboot\blog\security\CustomUserDetailsService.class
 com\springboot\blog\SpringbootBlogRestApiApplication.class
